@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover workshops, seminars, webinars, nature camps and biodiversity events organised by TBARC India.">
+<title>Events | TBARC India</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+:root{--green:#075333;--dark:#043b25;--light:#f0f6ef;--pale:#e4efe3;--text:#202923;--muted:#626a63;--border:#e4ebe4;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.65}body.detail-open{overflow-x:hidden;overflow-y:auto}a{color:inherit}
+.site-header{background:#fff;border-bottom:1px solid var(--border)}.nav-container{max-width:1200px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;text-decoration:none}.brand-logo{display:block;width:135px;height:30px;object-fit:contain;object-position:left center}.get-involved-btn{display:inline-block;padding:10px 20px;background:#176b45;color:#fff;text-decoration:none;font-size:14px;font-weight:700;border-radius:6px;white-space:nowrap}.get-involved-btn:hover{background:#104d32}
+.hero{background:linear-gradient(90deg,rgba(2,36,20,.92),rgba(4,64,35,.68)),url('https://i.ibb.co/M5s4JF3D/Twin-lantana-camara-edit.jpg') center 45%/cover;color:#fff;padding:78px 24px 82px}.hero-inner{max-width:1120px;margin:auto}.hero-label{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;padding:6px 13px;border-radius:30px;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:18px}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.12;letter-spacing:-1px;max-width:760px;margin:0 0 16px}.hero p{font-size:16px;color:#e2eee4;max-width:650px;margin:0}
+.events-section{padding:64px 24px 80px;background:#f7faf6;min-height:400px}.container{max-width:1120px;margin:auto}.section-heading{text-align:center;max-width:720px;margin:0 auto 34px}.eyebrow{color:var(--green);font-size:11px;text-transform:uppercase;letter-spacing:1.7px;font-weight:800;margin:0 0 8px}.section-heading h2{font-size:clamp(27px,3vw,36px);line-height:1.25;margin:0 0 10px}.section-heading p{color:var(--muted);font-size:14px;margin:0}.event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.event-card{display:block;width:100%;padding:0;text-align:left;font:inherit;color:inherit;background:#fff;border:1px solid var(--border);border-radius:15px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}.event-card:hover,.event-card:focus-visible{transform:translateY(-4px);box-shadow:0 13px 30px #0753331c;outline:2px solid #75a98a;outline-offset:2px}.event-image-wrap{height:225px;position:relative;background:var(--pale);overflow:hidden}.event-image{width:100%;height:100%;display:block;object-fit:cover;transition:transform .3s}.event-card:hover .event-image{transform:scale(1.035)}.event-category{position:absolute;top:14px;left:14px;background:#075333ed;color:#fff;padding:6px 12px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:.3px}.event-info{padding:20px 20px 22px}.event-title{color:var(--dark);font-size:19px;line-height:1.4;margin:0 0 13px}.event-meta{display:flex;flex-wrap:wrap;gap:8px 15px;color:var(--muted);font-size:12px}.event-meta span{display:flex;align-items:center;gap:6px}.event-meta b{color:var(--green);font-weight:700}.event-empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)}
+/* Original inline SVG icons, matching the supplied reference design */
+.ui-icon{display:inline-block;width:20px;height:20px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.event-meta .ui-icon{width:16px;height:16px;color:var(--green)}
+.highlight-icon .ui-icon{width:27px;height:27px}
+.detail-icon .ui-icon{width:24px;height:24px;color:var(--green)}
+.speaker-socials .ui-icon{width:17px;height:17px;fill:currentColor;stroke:none}
+.back-button .ui-icon,.register-button .ui-icon{width:17px;height:17px}
+
+/* Details view: same page, no new URL or page required */
+.detail-view{display:none;background:#fff}.detail-view.is-active{display:block}.listing-view.is-hidden{display:none}.detail-hero{min-height:285px;display:flex;align-items:center;padding:40px 6%;color:#fff;background:linear-gradient(90deg,rgba(0,25,10,.88),rgba(0,30,10,.28)),url('https://i.ibb.co/M5s4JF3D/Twin-lantana-camara-edit.jpg') center/cover no-repeat}.detail-hero-inner{max-width:1180px;width:100%;margin:auto}.back-button{display:inline-flex;align-items:center;gap:7px;color:#fff;text-decoration:none;border:1px solid #ffffff80;border-radius:7px;padding:8px 12px;font-size:12px;font-weight:700;background:#ffffff12;margin-bottom:20px;cursor:pointer}.back-button:hover{background:#ffffff25}.detail-category{display:table;background:#075333ed;padding:5px 13px;border-radius:25px;font-size:12px;margin-bottom:12px}.detail-hero h1{font-size:clamp(29px,4vw,44px);line-height:1.15;max-width:760px;margin:0 0 10px}.detail-hero p{margin:0;max-width:680px;color:#eaf2e9}.detail-container{max-width:1180px;margin:auto;padding:32px 24px}.detail-layout{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(260px,.9fr);gap:26px;align-items:start}.section{margin-bottom:32px}.section h2{font-size:21px;margin:0 0 16px;padding-left:12px;border-left:5px solid var(--green);line-height:1.25}.section>p{color:#505650;margin:0;white-space:pre-line}.highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;text-align:center}.highlight{padding:5px 3px}.highlight-icon{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 9px;border-radius:50%;background:var(--light);color:var(--green);font-size:25px}.highlight strong{display:block;font-size:13px;margin-bottom:3px}.highlight p{font-size:12px;line-height:1.45;color:#505650;margin:0}.speakers{display:flex;flex-direction:column;gap:18px}.speaker{display:grid;grid-template-columns:170px minmax(0,1fr);align-items:center;gap:22px;padding:22px;border:1px solid #e8eee8;border-radius:16px;background:#fff}.speaker-visual{text-align:center;min-width:0}.speaker-role{display:inline-block;margin:0 auto 13px;padding:6px 11px;border-radius:30px;background:#e7f2e8;color:#245a3b;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}.speaker-photo-wrap{width:100%;max-width:160px;height:175px;position:relative;margin:auto;isolation:isolate}.speaker-photo-wrap:before{content:"";position:absolute;z-index:-1;top:-7px;right:-7px;width:75%;height:75%;background:#dcebdc;border-radius:20px}.speaker-photo{width:100%;height:100%;object-fit:cover;border:4px solid white;border-radius:17px;box-shadow:0 6px 18px #0002;background:#e5eee6}.speaker-info{min-width:0}.speaker-name{display:block;font-size:19px;line-height:1.4;margin-bottom:4px;color:#173e2a}.speaker-description{font-size:13px;color:#555d56;margin:0 0 12px;white-space:pre-line}.speaker-topic{padding:11px 13px;background:#f4f8f3;border-left:4px solid var(--green);border-radius:0 9px 9px 0;font-size:12px;color:#34483a}.speaker-topic b{display:block;color:var(--green);font-size:10px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px}.speaker-socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.speaker-socials a{display:inline-block;padding:7px 11px;border:1px solid #dce8de;border-radius:7px;background:#fff;color:#245a3b;font-size:11px;font-weight:700;text-decoration:none}.speaker-socials a:hover{background:var(--green);color:#fff}.audience{display:flex;flex-wrap:wrap;gap:12px}.audience span{background:var(--light);color:var(--green);border-radius:30px;padding:7px 12px;font-size:12px;font-weight:700}
+.card{border:1px solid var(--border);border-radius:13px;padding:22px;margin-bottom:15px;background:#fff}.card h3{font-size:18px;margin:0 0 17px}.register-card{background:#f0f6ee;border:none}.register-button{display:block;background:var(--green);color:#fff;text-decoration:none;text-align:center;border-radius:9px;padding:13px 15px;font-size:14px;font-weight:bold;margin-bottom:14px}.register-button:hover{background:#063f29}.register-button{display:flex;align-items:center;justify-content:center;gap:8px}.register-note{font-size:12px;color:#515951;margin:0}.detail-row{display:flex;gap:13px;margin:0 0 17px;align-items:flex-start}.detail-row:last-child{margin-bottom:0}.detail-icon{width:27px;flex-shrink:0;color:var(--green);font-size:20px;line-height:1.3}.detail-row strong{display:block;font-size:13px}.detail-row p{font-size:13px;color:#555d56;margin:2px 0 0;overflow-wrap:anywhere;white-space:pre-line}.detail-row a{text-decoration:none}.detail-row a:hover{color:var(--green);text-decoration:underline}.footer{background:#bfd6c5;border-top:1px solid var(--border);padding:28px 20px;text-align:center}.footer-brand{font-size:19px;font-weight:800;color:var(--green);margin-bottom:5px}.footer p{font-size:12px;color:var(--muted);margin:5px 0}.footer a{color:var(--green);text-decoration:none}.footer a:hover{text-decoration:underline}
+@media(max-width:900px){.event-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-layout{grid-template-columns:minmax(0,1fr) 270px;gap:18px}.speaker{grid-template-columns:145px minmax(0,1fr);gap:18px;padding:18px}}
+@media(max-width:760px){.hero{padding:60px 20px 65px}.hero p{font-size:14px}.events-section{padding:48px 17px 58px}.event-grid{gap:13px}.event-image-wrap{height:175px}.event-info{padding:15px 13px 17px}.event-title{font-size:15px}.event-meta{font-size:11px;gap:7px 10px}.detail-hero{min-height:250px;padding:28px 20px}.detail-container{padding:22px 14px}.detail-layout{grid-template-columns:1fr;gap:5px}.highlights{grid-template-columns:repeat(2,minmax(0,1fr))}.speaker{grid-template-columns:1fr;gap:17px;padding:20px 17px}.speaker-photo-wrap{height:215px;max-width:200px}.speaker-info{text-align:center}.speaker-socials{justify-content:center}.speaker-topic{text-align:left}.card{padding:19px}}
+@media(max-width:420px){.nav-container{padding:10px 12px}.get-involved-btn{padding:8px 11px;font-size:12px}.brand-logo{width:135px;height:30px}.event-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.event-image-wrap{height:145px}.event-category{top:8px;left:8px;padding:5px 8px;font-size:9px}.event-info{padding:12px 10px 14px}.event-title{font-size:14px}.event-meta{display:grid;gap:4px}.speaker{padding:17px 13px}.highlights{gap:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* Detailed event content styling */
+.detail-container{padding-top:32px;padding-bottom:48px}
+.detail-layout{grid-template-columns:minmax(0,1.9fr) minmax(280px,.9fr);gap:26px}
+.section{margin-bottom:34px}
+.section h2{font-size:21px;margin:0 0 16px;padding-left:12px;border-left:5px solid var(--green);line-height:1.25}
+.section>p{color:#505650;margin:0;white-space:pre-line}
+.highlights{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.highlight-icon{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 9px;border-radius:50%;background:var(--light);color:var(--green);font-size:25px}
+.speakers{gap:22px}
+.speaker{grid-template-columns:220px minmax(0,1fr);gap:26px;padding:24px;border:1px solid #e8eee8;border-radius:17px;transition:transform .25s ease,box-shadow .25s ease}
+.speaker:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(7,83,51,.10)}
+.speaker-visual{min-width:0;text-align:center}
+.speaker-role{margin:0 auto 16px;padding:6px 12px;font-size:10px;letter-spacing:.7px;line-height:1.4}
+.speaker-photo-wrap{max-width:210px;height:215px}
+.speaker-photo-wrap:before{content:"";position:absolute;z-index:-1;top:-10px;right:-10px;width:76%;height:76%;background:#dcebdc;border-radius:25px}
+.speaker-photo-wrap:after{content:"";position:absolute;z-index:-1;bottom:-9px;left:-9px;width:65%;height:65%;background:#f0f6ee;border:2px solid #c8ddcb;border-radius:25px}
+.speaker-photo{border-radius:20px;border:4px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.speaker-info{min-width:0;padding:4px 0}
+.speaker-name{font-size:20px;line-height:1.4;margin-bottom:5px;color:#173e2a}
+.speaker-description{font-size:13px;line-height:1.6;color:#555d56;margin:0 0 17px;white-space:pre-line}
+.speaker-topic{padding:14px 16px;background:#f4f8f3;border-left:4px solid var(--green);border-radius:0 10px 10px 0;color:#34483a;font-size:14px;line-height:1.6;font-weight:600}
+.speaker-topic b{display:block;margin-bottom:5px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+.speaker-socials{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
+.speaker-socials a{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid #dce8de;border-radius:8px;background:#fff;color:#245a3b;font-size:12px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
+.speaker-socials a:hover{background:var(--green);color:#fff}
+.card{border:1px solid var(--border);border-radius:13px;padding:22px;margin-bottom:15px;background:#fff}
+.card h3{font-size:18px;margin:0 0 16px}
+.register-card{background:#f0f6ee;border:none}
+.register-button{display:block;background:var(--green);color:#fff;text-decoration:none;text-align:center;border-radius:9px;padding:13px 15px;font-size:14px;font-weight:bold;margin-bottom:14px}
+.register-button:hover{background:#063f29}.register-button{display:flex;align-items:center;justify-content:center;gap:8px}
+.register-note{font-size:12px;color:#515951;margin:0;white-space:pre-line}
+.detail-row{display:flex;gap:14px;margin:0 0 18px}
+.detail-row:last-child{margin-bottom:0}
+.detail-icon{width:30px;flex-shrink:0;color:var(--green);font-size:22px;line-height:1.3}
+.detail-row strong{display:block;font-size:13px}
+.detail-row p{font-size:13px;color:#555d56;margin:2px 0 0;overflow-wrap:anywhere}
+.detail-row a{color:inherit;text-decoration:none}
+.detail-row a:hover{text-decoration:underline;color:var(--green)}
+.audience{display:flex;flex-wrap:wrap;gap:12px}
+.audience span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:25px;background:var(--light);color:var(--green);font-size:12px;font-weight:700}
+@media(max-width:900px){.detail-layout{grid-template-columns:minmax(0,1fr) 270px;gap:18px}.speaker{grid-template-columns:165px minmax(0,1fr);gap:20px;padding:19px}.speaker-photo-wrap{max-width:160px;height:180px}.speaker-name{font-size:17px}}
+@media(max-width:760px){.detail-layout{grid-template-columns:1fr;gap:8px}.highlights{grid-template-columns:repeat(2,minmax(0,1fr))}.speakers{gap:16px}.speaker{grid-template-columns:1fr;gap:22px;padding:20px 17px}.speaker-photo-wrap{height:220px;max-width:210px}.speaker-photo-wrap:before{top:-7px;right:-7px;border-radius:20px}.speaker-photo-wrap:after{bottom:-7px;left:-7px;border-radius:20px}.speaker-photo{border-radius:17px}.speaker-info{text-align:center}.speaker-name{font-size:19px}.speaker-description{margin-bottom:15px}.speaker-topic{text-align:left}.speaker-socials{justify-content:center}.card{padding:19px}}
+@media(max-width:360px){.speaker{padding:17px 13px}.speaker-photo-wrap{max-width:190px;height:200px}.speaker-socials{gap:7px}.speaker-socials a{padding:8px 9px;font-size:11px}}
+/* Event status filters and archive links */
+.event-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 auto 28px}
+.event-filter{appearance:none;border:1px solid #d7e4d8;background:#fff;color:#245a3b;padding:10px 18px;border-radius:30px;font:700 13px Arial,Helvetica,sans-serif;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.event-filter:hover,.event-filter[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.event-status{position:absolute;top:14px;right:14px;padding:6px 10px;border-radius:30px;font-size:10px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;box-shadow:0 2px 8px #0002}
+.event-status.upcoming{background:#fff;color:#075333}.event-status.completed{background:#e6e9e6;color:#414a42}
+.detail-status{display:inline-flex;align-items:center;gap:6px;margin:0 0 12px;padding:6px 11px;border-radius:30px;background:#ffffff20;border:1px solid #ffffff55;color:#fff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
+.event-resources{display:grid;gap:10px;margin-top:12px}
+.resource-link{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 12px;border:1px solid #dce8de;border-radius:8px;color:#245a3b;background:#fff;text-decoration:none;font-size:13px;font-weight:700}
+.resource-link:hover{background:var(--green);border-color:var(--green);color:#fff}
+.resource-link[hidden]{display:none!important}
+.report-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.report-photo{margin:0;min-width:0;overflow:hidden;border-radius:12px;background:var(--light);border:1px solid var(--border)}
+.report-photo img{display:block;width:100%;height:150px;object-fit:cover}
+.report-photo figcaption{padding:9px 10px;font-size:11px;color:var(--muted);line-height:1.45}
+#detailStatus[hidden],.report-gallery[hidden]{display:none!important}
+.detail-layout.completed-layout{grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:26px}
+.detail-layout.completed-layout .left-content{width:100%;max-width:100%;min-width:0}
+.detail-layout.completed-layout #eventDetailsCard{margin-bottom:28px}
+.detail-layout.completed-layout .right-content{display:flex;flex-direction:column;gap:15px;align-items:stretch;min-width:0}
+.detail-layout.completed-layout .right-content .card{margin-bottom:0}
+.detail-layout.completed-layout #speakersSection{margin-bottom:0}
+.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:125px minmax(0,1fr);gap:16px;padding:16px}
+.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{max-width:125px;height:145px}
+.detail-layout.completed-layout #contactCard{display:none!important}
+@media(max-width:900px){.detail-layout.completed-layout{grid-template-columns:minmax(0,1fr) minmax(250px,.85fr);gap:18px}.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:1fr;gap:14px}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{max-width:160px;height:175px}.detail-layout.completed-layout #speakersSection .speaker-info{text-align:center}.detail-layout.completed-layout #speakersSection .speaker-socials{justify-content:center}}
+@media(max-width:760px){.report-gallery{grid-template-columns:1fr}.report-photo img{height:210px}.detail-layout.completed-layout{grid-template-columns:1fr}.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:1fr;gap:17px}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{height:220px;max-width:210px}}
+@media(max-width:760px){.event-filters{gap:7px;margin-bottom:22px}.event-filter{padding:9px 13px;font-size:12px}.event-status{top:8px;right:8px;padding:5px 7px;font-size:9px}}
+
+</style>
+</head>
+<body>
+<header class="site-header"><div class="nav-container"><a class="brand" href="https://tbarc.in" aria-label="TBARC India home"><img src="images/logo.png" alt="TBARC Logo" class="brand-logo"></a><a href="https://forms.gle/cvtcP5pCJYYg6xUD7" class="get-involved-btn" target="_blank" rel="noopener noreferrer">Get Involved</a></div></header>
+
+<div class="listing-view" id="listingView">
+  <section class="hero"><div class="hero-inner"><span class="hero-label">TBARC India · Programmes</span><h1>Events & Experiences</h1><p>Discover workshops, seminars, webinars, nature camps and other programmes bringing people together for biodiversity, research and conservation.</p></div></section>
+  <main class="events-section"><div class="container"><div class="section-heading"><p class="eyebrow">Learn · Connect · Take Action</p><h2>Explore Our Events</h2><p>Select a programme to explore its details, speakers, schedule and registration information.</p></div><div class="event-filters" id="eventFilters" role="group" aria-label="Filter events">
+  <button type="button" class="event-filter" data-filter="all" aria-pressed="true">All Events</button>
+  <button type="button" class="event-filter" data-filter="upcoming" aria-pressed="false">Upcoming</button>
+  <button type="button" class="event-filter" data-filter="completed" aria-pressed="false">Completed</button>
+</div>
+<div class="event-grid" id="eventGrid"></div></div></main>
+</div>
+
+<div class="detail-view" id="detailView" aria-live="polite">
+  <header class="detail-hero" id="detailHero"><div class="detail-hero-inner"><button type="button" class="back-button" id="backButton"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All Events</button><span class="detail-status" id="detailStatus"></span><span class="detail-category" id="detailCategory"></span><h1 id="detailTitle"></h1><p id="detailSummary"></p></div></header>
+  <main class="detail-container"><div class="detail-layout" id="detailLayout"><div class="left-content">
+    <div class="card" id="eventDetailsCard"><h3>Event Details</h3><div id="detailFacts"></div></div>
+    <section class="section" id="reportSection"><h2 id="detailAboutHeading">About the Event</h2><p id="detailAbout"></p><div class="report-gallery" id="reportGallery" hidden></div></section>
+    <section class="section" id="highlightsSection"><h2>Event Highlights</h2><div class="highlights" id="detailHighlights"></div></section>
+    <section class="section" id="speakersSection"><h2>Speakers</h2><div class="speakers" id="detailSpeakers"></div></section>
+    <section class="section" id="audienceSection"><h2>Who Can Participate?</h2><div class="audience" id="detailAudience"></div></section>
+  </div><aside class="right-content" id="rightContent">
+    <div class="card register-card" id="registrationCard"><h3 id="registrationHeading">Register for the Event</h3><a class="register-button" id="registerButton" href="#" target="_blank" rel="noopener noreferrer">Register Now <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p class="register-note" id="registerNote"></p></div>
+    <div class="card" id="resourcesCard" hidden><h3>Event Report & Gallery</h3><p class="register-note">Explore the event report and photographs.</p><div class="event-resources"><a class="resource-link" id="reportButton" href="#" target="_blank" rel="noopener noreferrer" hidden><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg> View Event Report</a><a class="resource-link" id="galleryButton" href="#" target="_blank" rel="noopener noreferrer" hidden><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg> View Photos & Gallery</a></div></div>
+    <div class="card" id="contactCard"><h3>Contact</h3><div id="detailContact"></div></div>
+  </aside></div></main>
+</div>
+
+<footer class="footer"><div class="footer-brand">TBARC India</div><p>Tropical Biodiversity Action and Research Centre</p><p>Appolo, Mampad College P.O., Nilambur, Kerala 676542.</p><p><a href="https://tbarc.in" target="_blank" rel="noopener noreferrer">tbarc.in</a> &nbsp; | &nbsp; <a href="mailto:tbarcindia@gmail.com">tbarcindia@gmail.com</a></p><p>© 2026 TBARC. All rights reserved.</p></footer>
+
+<script>
+/* EDIT EVENTS HERE. Duplicate an event object to add another programme.
+   Set status to "upcoming" before the event and "completed" after it takes place.
+   For completed events, add participantsCount and report. Add reportUrl/galleryUrl only when published.
+   Use a direct image URL or repository path such as images/event-poster.jpg.
+   All event details open inside this same page; no additional pages are created.
+*/
+const events = [
+  {
+    id: "invasive-species-awareness-2026",
+    status: "upcoming", // Change to "completed" after the event has taken place.
+    reportUrl: "", // Add a report URL after publishing the event report.
+    galleryUrl: "", // Add a gallery URL after uploading event photos.
+    participantsCount: "", // Enter the final number of participants after the event.
+    report: "", // Add a short factual report after the event takes place.
+    category: "Online Workshop",
+    title: "Invasive Species Awareness Workshop",
+    date: "14 November 2026",
+    time: "07:30 PM – 09:30 PM",
+    venue: "Online",
+    participants: "Open to all — students, teachers, nature enthusiasts and community members",
+    fee: "Paid registration — add fee amount here",
+    image: "https://i.ibb.co/M5s4JF3D/Twin-lantana-camara-edit.jpg",
+    summary: "Explore invasive plants in Kerala and understand their impacts on biodiversity and ecosystems.",
+    about: "This workshop aims to create awareness about invasive alien species, their impacts on biodiversity and the importance of protecting our natural ecosystems. Through expert talks, interactive sessions and engaging activities, participants will learn to identify common invasive species, understand the threats they pose to native flora and fauna, and explore practical ways to support their monitoring, management and prevention.",
+    highlights: [
+      { icon: "leaf", title: "Expert Talks", description: "Learn from researchers and conservationists." },
+      { icon: "users", title: "Interactive Sessions", description: "Engage in discussions and activities." },
+      { icon: "book-open", title: "Learning Resources", description: "Get learning materials and practical guidance." }
+    ],
+    speakers: [
+      { role: "Keynote Speaker", name: "Dr. T.V. Sajeev", description: "Chief Scientist, KFRI, Thrissur", topic: "Invasive Alien Species: Ecological Impacts and Management Challenges", image: "https://i.ibb.co/0RrrPFDM/20241021-201944-jpg.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/unais.bot/" }] },
+      { role: "Guest Speaker", name: "Aleem Yoosuf N.", description: "Invasive Plant Researcher", topic: "Invasive Plants of Kerala: Identification, Distribution and Ecological Threats", image: "images/aleem.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/aleemyoosufn/" }, { label: "Instagram", url: "https://www.instagram.com/dendrophilesapien/" }] },
+      { role: "Lead Speaker", name: "Unaisudheen TP", description: "Invasive Plant Researcher", topic: "Recognising Invasive Plants and Citizen Participation in Biodiversity Monitoring", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/unais.bot/" }] }
+    ],
+    audience: ["Students", "Teachers", "Nature Enthusiasts", "Community Members"],
+    registrationUrl: "https://forms.gle/7VmUrWrX1f7ueVpG6",
+    registrationNote: "Registration closes on 10 November 2026. Limited seats available. Confirmation will be sent to your email.",
+    contact: { email: "tbarcindia@gmail.com", phone: "+91 94468 33667", website: "https://tbarc.in" }
+  },
+  {
+    id: "ecological-niche-modelling-2026",
+    status: "completed",
+    reportUrl: "",
+    galleryUrl: "",
+    participantsCount: "35 (demo number — replace with actual attendance)",
+    report: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.",
+    reportImages: [
+      { src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80", alt: "Participants working with digital research tools", caption: "Research tools and data analysis — demo image" },
+      { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80", alt: "Group discussion during a research programme", caption: "Collaborative learning session — demo image" },
+      { src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80", alt: "Team working together at computers", caption: "Hands-on modelling activity — demo image" }
+    ],
+    category: "Training Programme",
+    title: "Ecological Niche Modelling",
+    date: "12 August 2026",
+    time: "12:00 PM",
+    venue: "Unity College",
+    participants: "Students and researchers",
+    fee: "Not applicable — completed event",
+    image: "https://placehold.co/1200x700/e4efe3/075333?text=Ecological+Niche+Modelling",
+    summary: "A programme on ecological niche modelling and its applications in ecology and biodiversity research.",
+    about: "A programme on ecological niche modelling and its applications in ecology and biodiversity research.",
+    highlights: [
+      { icon: "leaf", title: "Ecological Modelling", description: "An introduction to ecological niche modelling." },
+      { icon: "users", title: "Knowledge Sharing", description: "Discussion and exchange of ideas." },
+      { icon: "book-open", title: "Research Applications", description: "Explore potential applications in biodiversity research." }
+    ],
+    speakers: [
+      {
+        role: "Speaker",
+        name: "Dr. Sample Speaker (Demo)",
+        description: "Designation / Institution — replace with actual details",
+        topic: "Ecological Niche Modelling",
+        image: "https://placehold.co/500x600/e4efe3/075333?text=Speaker+Photo",
+        socials: []
+      }
+    ],
+    audience: ["Students", "Researchers", "Nature Enthusiasts"],
+    registrationUrl: "",
+    registrationNote: "This programme has been completed.",
+    contact: { email: "tbarcindia@gmail.com", phone: "+91 94468 33667", website: "https://tbarc.in" }
+  },
+  {
+    id: "sample-webinar",
+    status: "upcoming",
+    reportUrl: "",
+    galleryUrl: "",
+    participantsCount: "", // Enter the final number of participants after the event.
+    report: "", // Add a short factual report after the event takes place.
+    category: "Webinar",
+    title: "Add Your Next Programme",
+    date: "Date to be announced",
+    time: "Time to be announced",
+    venue: "Online / Venue to be announced",
+    participants: "Students, researchers and nature enthusiasts",
+    fee: "To be announced",
+    image: "https://i.ibb.co/M5s4JF3D/Twin-lantana-camara-edit.jpg",
+    summary: "Replace this sample card with details of your next TBARC event.",
+    about: "Replace this text with a description of the programme, its purpose, the topics it will cover and what participants can expect to learn.",
+    highlights: [
+      { icon: "mic", title: "Expert Sessions", description: "Add details about the programme sessions." },
+      { icon: "message-circle", title: "Discussion", description: "Add information about participant interaction." },
+      { icon: "sprout", title: "Action & Learning", description: "Add the expected learning outcomes." }
+    ],
+    speakers: [], audience: ["Students", "Researchers", "Nature Enthusiasts"],
+    registrationUrl: "", registrationNote: "Registration information will be announced.",
+    contact: { email: "tbarcindia@gmail.com", phone: "+91 94468 33667", website: "https://tbarc.in" }
+  }
+];
+
+const $ = id => document.getElementById(id);
+const eventGrid = $("eventGrid"), listingView = $("listingView"), detailView = $("detailView");
+function safeUrl(url){try{const u=new URL(url,window.location.href);return ["http:","https:"].includes(u.protocol)?u.href:""}catch{return ""}}
+function makeText(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;el.textContent=text||"";return el}
+const ICONS={
+ leaf:'<path d="M20 4C11 4 5 7 5 14c0 3 2 5 5 5 7 0 10-6 10-15Z" fill="currentColor" stroke="currentColor"/><path d="M3 22c4-6 8-10 14-14"/>',
+ users:'<circle cx="12" cy="7" r="3"/><circle cx="5" cy="9" r="2.5"/><circle cx="19" cy="9" r="2.5"/><path d="M6 20v-2c0-3 2-5 6-5s6 2 6 5v2Z"/><path d="M2 19v-2c0-2 1-3.5 3-4M22 19v-2c0-2-1-3.5-3-4"/>',
+ book:'<path d="M12 6C9 3 5 3 2 4v15c4-1 7-1 10 2"/><path d="M12 6c3-3 7-3 10-2v15c-4-1-7-1-10 2"/><path d="M12 6v15"/>',
+ 'book-open':'<path d="M12 6C9 3 5 3 2 4v15c4-1 7-1 10 2"/><path d="M12 6c3-3 7-3 10-2v15c-4-1-7-1-10 2"/><path d="M12 6v15"/>',
+ calendar:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h2M14 14h2M8 17h2"/>',
+ clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>',
+ pin:'<path d="M12 22S4 14 4 9a8 8 0 1 1 16 0c0 5-8 13-8 13Z" fill="currentColor"/><circle cx="12" cy="9" r="2.5" fill="#fff" stroke="#fff"/>',
+ tag:'<path d="M3 12V4h8l10 10-7 7L3 12Z" fill="currentColor"/><circle cx="8" cy="8" r="1.3" fill="#fff" stroke="#fff"/>',
+ mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>',
+ phone:'<path d="M6 2h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 2-2 4-4 4C9 20 4 15 2 6c0-2 2-4 4-4Z" fill="currentColor"/>',
+ globe:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6 4 10s-1 7-4 10c-3-3-4-6-4-10s1-7 4-10Z"/>',
+ mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/>',
+ 'message-circle':'<path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/>',
+ sprout:'<path d="M12 21v-9"/><path d="M12 12C5 12 3 8 3 4c6 0 9 3 9 8Z"/><path d="M12 15c0-6 4-9 9-9 0 5-3 9-9 9Z"/>',
+ linkedin:'<path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.26 2.37 4.26 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/>',
+ instagram:'<path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 3a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6Zm0 2.2a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5.1-3.8a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>',
+ arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+ back:'<path d="M19 12H5M11 18l-6-6 6-6"/>'
+};
+function makeIcon(name,className="ui-icon"){const svg=document.createElementNS("http://www.w3.org/2000/svg","svg");svg.setAttribute("viewBox","0 0 24 24");svg.setAttribute("class",className);svg.setAttribute("aria-hidden","true");svg.innerHTML=ICONS[name]||ICONS.leaf;return svg}
+function iconText(name,text){const span=makeText("span","","");span.style.display="inline-flex";span.style.alignItems="center";span.style.gap="6px";span.append(makeIcon(name),document.createTextNode(text));return span}
+let activeFilter = "all";
+function getEventStatus(event){
+  // A manually marked completed event stays completed; otherwise use its date.
+  if(event.status === "completed") return "completed";
+  const parsed = Date.parse(event.date || "");
+  if(Number.isFinite(parsed) && parsed < new Date().setHours(0,0,0,0)) return "completed";
+  return "upcoming";
+}
+function setActiveFilter(filter){
+  activeFilter = filter;
+  document.querySelectorAll(".event-filter").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.filter===filter)));
+  renderCards();
+}
+function renderCards(){
+  eventGrid.replaceChildren();
+  events.filter(e=>!e.hidden && (activeFilter === "all" || getEventStatus(e) === activeFilter)).forEach(event=>{
+    const card=document.createElement("button");card.type="button";card.className="event-card";card.setAttribute("aria-label","View details: "+event.title);
+    const imageWrap=makeText("div","event-image-wrap","");
+    const img=document.createElement("img");img.className="event-image";img.src=event.image;img.alt=event.title;img.loading="lazy";img.onerror=function(){this.onerror=null;this.src="https://placehold.co/900x600/e4efe3/075333?text=TBARC+Event"};
+    const cat=makeText("span","event-category",event.category);
+    const status=makeText("span","event-status "+getEventStatus(event),getEventStatus(event)==="completed"?"Completed":"Upcoming");
+    imageWrap.append(img,cat,status);
+    const info=makeText("div","event-info","");info.appendChild(makeText("h3","event-title",event.title));
+    const meta=makeText("div","event-meta","");meta.append(iconText("calendar",event.date),iconText("clock",event.time));
+    info.appendChild(meta);card.append(imageWrap,info);card.addEventListener("click",()=>openEvent(event.id));eventGrid.appendChild(card);
+  });
+  if(!eventGrid.children.length){const msg=activeFilter==="completed"?"No completed events have been added yet.":activeFilter==="upcoming"?"There are no upcoming events to display right now.":"There are no events to display right now.";eventGrid.appendChild(makeText("p","event-empty",msg))}
+}
+document.querySelectorAll(".event-filter").forEach(button=>button.addEventListener("click",()=>setActiveFilter(button.dataset.filter)));
+
+function addFact(icon,label,value){const row=makeText("div","detail-row","");const iconBox=makeText("div","detail-icon","");iconBox.appendChild(makeIcon(icon));row.appendChild(iconBox);const content=makeText("div","","");content.appendChild(makeText("strong","",label));content.appendChild(makeText("p","",value||"To be announced"));row.appendChild(content);return row}
+function addContact(icon,label,value,href){const row=makeText("div","detail-row","");const iconBox=makeText("div","detail-icon","");iconBox.appendChild(makeIcon(icon));row.appendChild(iconBox);const content=makeText("div","","");const p=makeText("p","","");const valid=href&&safeUrl(href);if(valid){const a=document.createElement("a");a.href=valid;a.textContent=value;a.target=href.startsWith("https:")?"_blank":"_self";if(a.target==="_blank")a.rel="noopener noreferrer";p.appendChild(a)}else p.textContent=value;content.appendChild(p);row.appendChild(content);return row}
+function openEvent(id){const event=events.find(e=>e.id===id);if(!event)return;history.replaceState(null,"", "#"+encodeURIComponent(event.id));const status=getEventStatus(event);const layout=$("detailLayout"),leftContent=document.querySelector(".left-content"),rightContent=$("rightContent"),detailsCard=$("eventDetailsCard"),speakersSection=$("speakersSection"),audienceSection=$("audienceSection"),resourcesCard=$("resourcesCard"),contactCard=$("contactCard");layout.classList.toggle("completed-layout",status==="completed");$("detailStatus").hidden=true;if(status==="completed"){leftContent.insertBefore(detailsCard,$("reportSection"));rightContent.insertBefore(speakersSection,resourcesCard);contactCard.style.display="none";}else{leftContent.insertBefore(speakersSection,audienceSection);rightContent.insertBefore(detailsCard,$("registrationCard"));contactCard.style.display="block";}$("detailCategory").textContent=event.category;$("detailTitle").textContent=event.title;$("detailSummary").textContent=event.summary||"";$("detailHero").style.backgroundImage=`linear-gradient(90deg,rgba(0,25,10,.88),rgba(0,30,10,.28)),url("${event.image}")`;
+ $("detailAboutHeading").textContent=status==="completed"?"Programme Report":"About the Event";
+ $("detailAbout").textContent=status==="completed"?(event.report||event.about||"The programme report will be added soon."):(event.about||"Details will be announced soon.");
+ const gallery=$("reportGallery");gallery.replaceChildren();if(status==="completed"&&Array.isArray(event.reportImages)&&event.reportImages.length){event.reportImages.slice(0,3).forEach((photo,index)=>{const figure=makeText("figure","report-photo","");const img=document.createElement("img");img.src=photo.src;img.alt=photo.alt||("Programme photo "+(index+1));img.loading="lazy";img.onerror=function(){this.onerror=null;this.src="https://placehold.co/900x600/e4efe3/075333?text=Programme+Photo"};figure.appendChild(img);figure.appendChild(makeText("figcaption","",photo.caption||("Programme photo "+(index+1))));gallery.appendChild(figure)});gallery.hidden=false}else{gallery.hidden=true}
+ $("highlightsSection").style.display=status==="completed"?"none":"block";
+ const hi=$("detailHighlights");hi.replaceChildren();(event.highlights||[]).forEach(h=>{const item=makeText("div","highlight","");const iconBox=makeText("div","highlight-icon","");iconBox.appendChild(makeIcon(h.icon||"leaf"));item.appendChild(iconBox);item.appendChild(makeText("strong","",h.title));item.appendChild(makeText("p","",h.description));hi.appendChild(item)});
+ const speakers=$("detailSpeakers");speakers.replaceChildren();(event.speakers||[]).forEach(s=>{const article=makeText("article","speaker","");const visual=makeText("div","speaker-visual","");visual.appendChild(makeText("span","speaker-role",s.role||"Speaker"));const wrap=makeText("div","speaker-photo-wrap","");const img=document.createElement("img");img.className="speaker-photo";img.src=s.image||"https://placehold.co/500x600/e4efe3/075333?text=Speaker";img.alt=s.name||"Speaker";img.loading="lazy";img.onerror=function(){this.onerror=null;this.src="https://placehold.co/500x600/e4efe3/075333?text=Speaker"};wrap.appendChild(img);visual.appendChild(wrap);
+ const info=makeText("div","speaker-info","");info.appendChild(makeText("strong","speaker-name",s.name||"Speaker name"));info.appendChild(makeText("p","speaker-description",s.description||""));if(s.topic){const topic=makeText("div","speaker-topic","");topic.appendChild(makeText("b","","Talk Topic"));topic.appendChild(document.createTextNode(s.topic));info.appendChild(topic)}const socials=makeText("div","speaker-socials","");(s.socials||[]).filter(x=>x.url&&safeUrl(x.url)).forEach(x=>{const a=document.createElement("a");a.href=safeUrl(x.url);a.appendChild(makeIcon(String(x.label).toLowerCase()==="linkedin"?"linkedin":String(x.label).toLowerCase()==="instagram"?"instagram":"globe"));a.appendChild(document.createTextNode(x.label));a.target="_blank";a.rel="noopener noreferrer";socials.appendChild(a)});if(socials.children.length)info.appendChild(socials);article.append(visual,info);speakers.appendChild(article)});if(!speakers.children.length)speakers.appendChild(makeText("p","","Speaker details will be announced soon."));
+ const audience=$("detailAudience");audience.replaceChildren();(event.audience||[]).forEach(a=>audience.appendChild(makeText("span","",a)));$("audienceSection").style.display=status!=="completed"&&audience.children.length?"block":"none";
+ const facts=$("detailFacts");facts.replaceChildren();const participantValue=status==="completed"?(event.participantsCount!==undefined&&String(event.participantsCount).trim()!==""?String(event.participantsCount):"Not recorded"):(event.participants||"To be announced");const participantLabel=status==="completed"?"Number of Participants":"Participants";facts.append(addFact("calendar","Date",event.date),addFact("clock","Time",event.time),addFact("pin","Venue",event.venue),addFact("users",participantLabel,participantValue));if(status!=="completed")facts.appendChild(addFact("tag","Fee",event.fee));
+ const register=$("registerButton"),regUrl=safeUrl(event.registrationUrl||""),statusNow=getEventStatus(event);
+ const registrationCard=$("registrationCard");
+ if(statusNow==="completed"){
+   registrationCard.style.display="none";
+   $("registrationHeading").textContent="This Event Has Concluded";
+   register.style.display="none";
+   $("registerNote").textContent="Thank you for your interest. Explore the event report or photo gallery when available.";
+ }else{
+   registrationCard.style.display="block";
+   $("registrationHeading").textContent="Register for the Event";
+   if(regUrl){register.href=regUrl;register.style.display="block";register.target="_blank"}else{register.removeAttribute("href");register.style.display="none"}
+   $("registerNote").textContent=event.registrationNote||"Please contact TBARC for registration information.";
+ }
+ const reportUrl=safeUrl(event.reportUrl||""),galleryUrl=safeUrl(event.galleryUrl||"");
+ const reportButton=$("reportButton"),galleryButton=$("galleryButton");
+ if(reportUrl){reportButton.href=reportUrl;reportButton.hidden=false}else{reportButton.removeAttribute("href");reportButton.hidden=true}
+ if(galleryUrl){galleryButton.href=galleryUrl;galleryButton.hidden=false}else{galleryButton.removeAttribute("href");galleryButton.hidden=true}
+ $("resourcesCard").hidden=!(reportUrl||galleryUrl);
+ const contact=$("detailContact");contact.replaceChildren();const c=event.contact||{};if(c.email)contact.appendChild(addContact("mail","Email",c.email,"mailto:"+c.email));if(c.phone)contact.appendChild(addContact("phone","Phone",c.phone,"tel:"+c.phone.replace(/[^+\d]/g,"")));if(c.website)contact.appendChild(addContact("globe","Website",c.website,c.website));
+ listingView.classList.add("is-hidden");detailView.classList.add("is-active");document.body.classList.add("detail-open");window.scrollTo({top:0,behavior:"auto"});}
+function showListing(){detailView.classList.remove("is-active");listingView.classList.remove("is-hidden");document.body.classList.remove("detail-open");history.replaceState(null,"",window.location.pathname+window.location.search);window.scrollTo({top:0,behavior:"auto"})}
+$("backButton").addEventListener("click",showListing);window.addEventListener("popstate",()=>{const id=decodeURIComponent(location.hash.slice(1));if(id&&events.some(e=>e.id===id))openEvent(id);else showListing()});renderCards();const initialId=decodeURIComponent(location.hash.slice(1));if(initialId&&events.some(e=>e.id===initialId))openEvent(initialId);
+</script>
+</body>
+</html>
