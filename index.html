@@ -11,7 +11,7 @@
 :root{--green:#075333;--dark:#043b25;--light:#f0f6ef;--pale:#e4efe3;--text:#202923;--muted:#626a63;--border:#e4ebe4;--white:#fff}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff;line-height:1.65}body.detail-open{overflow-x:hidden;overflow-y:auto}a{color:inherit}
 .site-header{background:#fff;border-bottom:1px solid var(--border)}.nav-container{max-width:1200px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;text-decoration:none}.brand-logo{display:block;width:135px;height:30px;object-fit:contain;object-position:left center}.get-involved-btn{display:inline-block;padding:10px 20px;background:#176b45;color:#fff;text-decoration:none;font-size:14px;font-weight:700;border-radius:6px;white-space:nowrap}.get-involved-btn:hover{background:#104d32}
-.hero{background:linear-gradient(90deg,rgba(2,36,20,.92),rgba(4,64,35,.68)),url('images/hero.jpg') center 45%/cover;color:#fff;padding:78px 24px 82px}.hero-inner{max-width:1120px;margin:auto}.hero-label{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;padding:6px 13px;border-radius:30px;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:18px}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.12;letter-spacing:-1px;max-width:760px;margin:0 0 16px}.hero p{font-size:16px;color:#e2eee4;max-width:650px;margin:0}
+.hero{background:linear-gradient(90deg,rgba(2,36,20,.92),rgba(4,64,35,.68)),url('images/hero.jpg') center 45%/cover;color:#fff;padding:78px 24px 82px}.hero-inner{max-width:1120px;margin:auto}.hero-logos{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:14px;margin:0 0 22px}.hero-logos[hidden]{display:none!important}.hero-logos img{display:block;width:auto;height:auto;max-width:150px;max-height:68px;object-fit:contain;background:#fff;border-radius:8px;padding:8px 12px;box-shadow:0 2px 10px #0002}.hero-label{display:inline-block;background:#ffffff20;border:1px solid #ffffff55;padding:6px 13px;border-radius:30px;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:18px}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.12;letter-spacing:-1px;max-width:760px;margin:0 0 16px}.hero p{font-size:16px;color:#e2eee4;max-width:650px;margin:0}
 .events-section{padding:64px 24px 80px;background:#f7faf6;min-height:400px}.container{max-width:1120px;margin:auto}.section-heading{text-align:center;max-width:720px;margin:0 auto 34px}.eyebrow{color:var(--green);font-size:11px;text-transform:uppercase;letter-spacing:1.7px;font-weight:800;margin:0 0 8px}.section-heading h2{font-size:clamp(27px,3vw,36px);line-height:1.25;margin:0 0 10px}.section-heading p{color:var(--muted);font-size:14px;margin:0}.event-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.event-card{display:block;width:100%;padding:0;text-align:left;font:inherit;color:inherit;background:#fff;border:1px solid var(--border);border-radius:15px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}.event-card:hover,.event-card:focus-visible{transform:translateY(-4px);box-shadow:0 13px 30px #0753331c;outline:2px solid #75a98a;outline-offset:2px}.event-image-wrap{height:225px;position:relative;background:var(--pale);overflow:hidden}.event-image{width:100%;height:100%;display:block;object-fit:cover;transition:transform .3s}.event-card:hover .event-image{transform:scale(1.035)}.event-category{position:absolute;top:14px;left:14px;background:#075333ed;color:#fff;padding:6px 12px;border-radius:30px;font-size:11px;font-weight:700;letter-spacing:.3px}.event-info{padding:20px 20px 22px}.event-title{color:var(--dark);font-size:19px;line-height:1.4;margin:0 0 13px}.event-meta{display:flex;flex-wrap:wrap;gap:8px 15px;color:var(--muted);font-size:12px}.event-meta span{display:flex;align-items:center;gap:6px}.event-meta b{color:var(--green);font-weight:700}.event-empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)}
 /* Original inline SVG icons, matching the supplied reference design */
 .ui-icon{display:inline-block;width:20px;height:20px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
@@ -125,7 +125,7 @@
 <header class="site-header"><div class="nav-container"><a class="brand" href="https://tbarc.in" aria-label="TBARC India home"><img src="images/logo.png" alt="TBARC Logo" class="brand-logo"></a><a href="https://forms.gle/cvtcP5pCJYYg6xUD7" class="get-involved-btn" target="_blank" rel="noopener noreferrer">Get Involved</a></div></header>
 
 <div class="listing-view" id="listingView">
-  <section class="hero"><div class="hero-inner"><span class="hero-label">TBARC India · Events</span><h1>Events & Experiences</h1><p>Discover workshops, seminars, webinars, nature camps and other programmes bringing people together for biodiversity, research and conservation.</p></div></section>
+  <section class="hero"><div class="hero-inner"><div class="hero-logos" id="heroCollaborationLogos" aria-label="Collaborating organisations" hidden></div><span class="hero-label">TBARC India · Events</span><h1>Events & Experiences</h1><p>Discover workshops, seminars, webinars, nature camps and other programmes bringing people together for biodiversity, research and conservation.</p></div></section>
   <main class="events-section"><div class="container"><div class="section-heading"><h2>Explore Our Events</h2><p>Select a programme to explore its details, speakers, schedule and registration information.</p></div><div class="event-filters" id="eventFilters" role="group" aria-label="Filter events">
   <button type="button" class="event-filter" data-filter="all" aria-pressed="true">All Events</button>
   <button type="button" class="event-filter" data-filter="upcoming" aria-pressed="false">Upcoming</button>
@@ -157,6 +157,32 @@
    Use a direct image URL or repository path such as images/event-poster.jpg.
    All event details open inside this same page; no additional pages are created.
 */
+// OPTIONAL COLLABORATION LOGOS FOR THE MAIN HERO SECTION.
+// Leave this array empty [] to show NO logos and no blank space.
+// Add one or more logo objects when a collaboration is taking place.
+// Use a repository path (e.g. "images/partner-logo.png") or a direct image URL.
+const heroCollaborationLogos = [
+  // { src: "images/logo.png", },
+  // { src: "images/logo.png",  },
+];
+
+function renderHeroCollaborationLogos(){
+  const container = document.getElementById("heroCollaborationLogos");
+  if(!container) return;
+  container.replaceChildren();
+  const logos = heroCollaborationLogos.filter(logo => logo && typeof logo.src === "string" && logo.src.trim());
+  if(!logos.length){ container.hidden = true; return; }
+  logos.forEach(logo => {
+    const img = document.createElement("img");
+    img.src = logo.src;
+    img.alt = logo.alt || "Collaborating organisation";
+    img.loading = "lazy";
+    img.onerror = function(){ this.remove(); if(!container.children.length) container.hidden = true; };
+    container.appendChild(img);
+  });
+  container.hidden = false;
+}
+
 const events = [
   {
     id: "Practical-Plant-Ecology-and-Vegetation-Analysis",
@@ -385,7 +411,7 @@ function openEvent(id){const event=events.find(e=>e.id===id);if(!event)return;hi
  const contact=$("detailContact");contact.replaceChildren();const c=event.contact||{};if(c.email)contact.appendChild(addContact("mail","Email",c.email,"mailto:"+c.email));if(c.phone)contact.appendChild(addContact("phone","Phone",c.phone,"tel:"+c.phone.replace(/[^+\d]/g,"")));if(c.website)contact.appendChild(addContact("globe","Website",c.website,c.website));
  listingView.classList.add("is-hidden");detailView.classList.add("is-active");document.body.classList.add("detail-open");window.scrollTo({top:0,behavior:"auto"});}
 function showListing(){detailView.classList.remove("is-active");listingView.classList.remove("is-hidden");document.body.classList.remove("detail-open");history.replaceState(null,"",window.location.pathname+window.location.search);window.scrollTo({top:0,behavior:"auto"})}
-$("backButton").addEventListener("click",showListing);window.addEventListener("popstate",()=>{const id=decodeURIComponent(location.hash.slice(1));if(id&&events.some(e=>e.id===id))openEvent(id);else showListing()});renderCards();const initialId=decodeURIComponent(location.hash.slice(1));if(initialId&&events.some(e=>e.id===initialId))openEvent(initialId);
+$("backButton").addEventListener("click",showListing);window.addEventListener("popstate",()=>{const id=decodeURIComponent(location.hash.slice(1));if(id&&events.some(e=>e.id===id))openEvent(id);else showListing()});renderHeroCollaborationLogos();renderCards();const initialId=decodeURIComponent(location.hash.slice(1));if(initialId&&events.some(e=>e.id===initialId))openEvent(initialId);
 </script>
 </body>
 </html>
