@@ -141,16 +141,16 @@
 */
 const events = [
   {
-    id: "Ecological Niche Modelling Using Maxent",
+    id: "ecological niche modelling",
     status: "upcoming", // Change to "completed" after the event has taken place.
     reportUrl: "", // Add a report URL after publishing the event report.
     galleryUrl: "", // Add a gallery URL after uploading event photos.
     participantsCount: "", // Enter the final number of participants after the event.
     report: "", // Add a short factual report after the event takes place.
-    category: "Certificate course",
-    title: "Ecological Niche Modelling Using Maxent",
-    date: "8-13 december 2026",
-    time: "09:30 AM – 04:30 PM",
+    category: "certificate course",
+    title: "Ecological Niche Modelling",
+    date: "8-13 December 2026",
+    time: "09:30 AM – 09:30 PM",
     venue: "Hybrid",
     participants: "Open to all — students, teachers, nature enthusiasts and community members",
     fee: "Paid registration — add fee amount here",
@@ -215,7 +215,7 @@ const events = [
     contact: { email: "tbarcindia@gmail.com", phone: "+91 94468 33667", website: "https://tbarc.in" }
   },
   {
-    id: "Ecological Niche Modelling Using Maxent",
+    id: "sample-webinar",
     status: "upcoming",
     reportUrl: "",
     galleryUrl: "",
@@ -223,9 +223,9 @@ const events = [
     report: "", // Add a short factual report after the event takes place.
     category: "Webinar",
     title: "Add Your Next Programme",
-    date: "8-13 december 2026",
-    time: "9.30 AM - 4.30 PM",
-    venue: "Hybrid",
+    date: "Date to be announced",
+    time: "Time to be announced",
+    venue: "Online / Venue to be announced",
     participants: "Students, researchers and nature enthusiasts",
     fee: "To be announced",
     image: "https://i.ibb.co/M5s4JF3D/Twin-lantana-camara-edit.jpg",
@@ -270,8 +270,12 @@ function makeIcon(name,className="ui-icon"){const svg=document.createElementNS("
 function iconText(name,text){const span=makeText("span","","");span.style.display="inline-flex";span.style.alignItems="center";span.style.gap="6px";span.append(makeIcon(name),document.createTextNode(text));return span}
 let activeFilter = "all";
 function getEventStatus(event){
-  // A manually marked completed event stays completed; otherwise use its date.
+  // An explicitly configured status always wins, so editing other event details
+  // cannot unexpectedly change Upcoming to Completed.
+  if(event.status === "upcoming") return "upcoming";
   if(event.status === "completed") return "completed";
+
+  // Only infer status from the date when no status has been set on the event.
   const parsed = Date.parse(event.date || "");
   if(Number.isFinite(parsed) && parsed < new Date().setHours(0,0,0,0)) return "completed";
   return "upcoming";
