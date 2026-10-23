@@ -56,7 +56,8 @@
 .speaker-name{font-size:20px;line-height:1.4;margin-bottom:5px;color:#173e2a}
 .speaker-description{font-size:13px;line-height:1.6;color:#555d56;margin:0 0 17px;white-space:pre-line}
 .speaker-topic{padding:14px 16px;background:#f4f8f3;border-left:4px solid var(--green);border-radius:0 10px 10px 0;color:#34483a;font-size:14px;line-height:1.6;font-weight:600}
-.speaker-topic b{display:block;margin-bottom:5px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green)}\n.speaker-bio{font-size:13px;line-height:1.6;color:#555d56;margin:12px 0 0;white-space:pre-line}
+.speaker-topic b{display:block;margin-bottom:5px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+.speaker-bio{font-size:13px;line-height:1.6;color:#555d56;margin:12px 0 0;white-space:pre-line}
 .speaker-socials{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
 .speaker-socials a{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border:1px solid #dce8de;border-radius:8px;background:#fff;color:#245a3b;font-size:12px;font-weight:600;text-decoration:none;transition:background .2s,color .2s}
 .speaker-socials a:hover{background:var(--green);color:#fff}
@@ -295,12 +296,10 @@ const events = [
     audience: ["Students", "Researchers", "Nature Enthusiasts"],
     registrationUrl: "",
     registrationNote: "This programme has been completed.",
-    contact: { email: "tbarcindia@gmail.com", phone: "+91 94468 33667", website: "https://tbarc.in" }
-    collaborationLogos: [
-      { src: "images/logo.png", alt: "Partner organisation" },
-      { src: "images/logo.png", alt: "Collaborating organisation" }
-  },
-  
+    contact: { email: "tbarcindia@gmail.com", phone: "+91 94468 33667", website: "https://tbarc.in" },
+    // OPTIONAL: Add partner logos for this event only. Leave [] to show no logos.
+    collaborationLogos: []
+  }
 ];
 
 const $ = id => document.getElementById(id);
