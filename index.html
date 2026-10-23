@@ -37,7 +37,7 @@
 .highlights{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .highlight-icon{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 9px;border-radius:50%;background:var(--light);color:var(--green);font-size:25px}
 .speakers{gap:22px}
-.speaker{grid-template-columns:220px minmax(0,1fr);gap:26px;padding:24px;border:1px solid #e8eee8;border-radius:17px;transition:transform .25s ease,box-shadow .25s ease}
+.speaker{grid-template-columns:190px minmax(0,1fr);gap:26px;padding:24px;border:1px solid #e8eee8;border-radius:17px;transition:transform .25s ease,box-shadow .25s ease;align-items:start}.speaker-visual{display:flex;flex-direction:column;align-items:center}.speaker-identity{margin-top:13px;text-align:center}.speaker-identity .speaker-name{margin:0 0 5px}.speaker-identity .speaker-description{margin:0;font-size:12px;line-height:1.5;color:var(--muted)}.speaker-content{min-width:0}.speaker-content .speaker-topic{margin-bottom:12px}.speaker-content .speaker-bio{margin:0 0 12px}
 .speaker:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(7,83,51,.10)}
 .speaker-visual{min-width:0;text-align:center}
 .speaker-role{margin:0 auto 16px;padding:6px 12px;font-size:10px;letter-spacing:.7px;line-height:1.4}
@@ -69,7 +69,7 @@
 .audience{display:flex;flex-wrap:wrap;gap:12px}
 .audience span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:25px;background:var(--light);color:var(--green);font-size:12px;font-weight:700}
 @media(max-width:900px){.detail-layout{grid-template-columns:minmax(0,1fr) 270px;gap:18px}.speaker{grid-template-columns:165px minmax(0,1fr);gap:20px;padding:19px}.speaker-photo-wrap{max-width:160px;height:180px}.speaker-name{font-size:17px}}
-@media(max-width:760px){.detail-layout{grid-template-columns:1fr;gap:8px}.highlights{grid-template-columns:repeat(2,minmax(0,1fr))}.speakers{gap:16px}.speaker{grid-template-columns:1fr;gap:22px;padding:20px 17px}.speaker-photo-wrap{height:220px;max-width:210px}.speaker-photo-wrap:before{top:-7px;right:-7px;border-radius:20px}.speaker-photo-wrap:after{bottom:-7px;left:-7px;border-radius:20px}.speaker-photo{border-radius:17px}.speaker-info{text-align:center}.speaker-name{font-size:19px}.speaker-description{margin-bottom:15px}.speaker-topic{text-align:left}.speaker-socials{justify-content:center}.card{padding:19px}}
+@media(max-width:760px){.detail-layout{grid-template-columns:1fr;gap:8px}.highlights{grid-template-columns:repeat(2,minmax(0,1fr))}.speakers{gap:16px}.speaker{grid-template-columns:1fr;gap:22px;padding:20px 17px}.speaker-visual{width:100%}.speaker-identity{margin-top:13px}.speaker-content{width:100%}.speaker-photo-wrap{height:220px;max-width:210px}.speaker-photo-wrap:before{top:-7px;right:-7px;border-radius:20px}.speaker-photo-wrap:after{bottom:-7px;left:-7px;border-radius:20px}.speaker-photo{border-radius:17px}.speaker-info{text-align:center}.speaker-name{font-size:19px}.speaker-description{margin-bottom:15px}.speaker-topic{text-align:left}.speaker-socials{justify-content:center}.card{padding:19px}}
 @media(max-width:360px){.speaker{padding:17px 13px}.speaker-photo-wrap{max-width:190px;height:200px}.speaker-socials{gap:7px}.speaker-socials a{padding:8px 9px;font-size:11px}}
 /* Event status filters and archive links */
 .event-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 auto 28px}
@@ -99,6 +99,19 @@
 @media(max-width:900px){.detail-layout.completed-layout{grid-template-columns:minmax(0,1fr) minmax(250px,.85fr);gap:18px}.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:1fr;gap:14px}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{max-width:160px;height:175px}.detail-layout.completed-layout #speakersSection .speaker-info{text-align:center}.detail-layout.completed-layout #speakersSection .speaker-socials{justify-content:center}}
 @media(max-width:760px){.report-gallery{grid-template-columns:1fr}.report-photo img{height:210px}.detail-layout.completed-layout{grid-template-columns:1fr}.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:1fr;gap:17px}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{height:220px;max-width:210px}}
 @media(max-width:760px){.event-filters{gap:7px;margin-bottom:22px}.event-filter{padding:9px 13px;font-size:12px}.event-status{top:8px;right:8px;padding:5px 7px;font-size:9px}}
+
+
+/* Text alignment correction: justify event descriptions and speaker bios */
+.event-description,
+.event-about,
+.about-event,
+.speaker-bio,
+.speaker-description,
+.speaker-content .bio,
+.speaker-content p.description {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 </style>
 </head>
@@ -310,7 +323,7 @@ function openEvent(id){const event=events.find(e=>e.id===id);if(!event)return;hi
  $("highlightsSection").style.display=status==="completed"?"none":"block";
  const hi=$("detailHighlights");hi.replaceChildren();(event.highlights||[]).forEach(h=>{const item=makeText("div","highlight","");const iconBox=makeText("div","highlight-icon","");iconBox.appendChild(makeIcon(h.icon||"leaf"));item.appendChild(iconBox);item.appendChild(makeText("strong","",h.title));item.appendChild(makeText("p","",h.description));hi.appendChild(item)});
  const speakers=$("detailSpeakers");speakers.replaceChildren();(event.speakers||[]).forEach(s=>{const article=makeText("article","speaker","");const visual=makeText("div","speaker-visual","");visual.appendChild(makeText("span","speaker-role",s.role||"Speaker"));const wrap=makeText("div","speaker-photo-wrap","");const img=document.createElement("img");img.className="speaker-photo";img.src=s.image||"https://placehold.co/500x600/e4efe3/075333?text=Speaker";img.alt=s.name||"Speaker";img.loading="lazy";img.onerror=function(){this.onerror=null;this.src="https://placehold.co/500x600/e4efe3/075333?text=Speaker"};wrap.appendChild(img);visual.appendChild(wrap);
- const info=makeText("div","speaker-info","");info.appendChild(makeText("strong","speaker-name",s.name||"Speaker name"));info.appendChild(makeText("p","speaker-description",s.description||""));if(s.topic){const topic=makeText("div","speaker-topic","");topic.appendChild(makeText("b","","Talk Topic"));topic.appendChild(document.createTextNode(s.topic));info.appendChild(topic)}if(s.bio){const bio=makeText("p","speaker-bio",s.bio);info.appendChild(bio)}const socials=makeText("div","speaker-socials","");(s.socials||[]).filter(x=>x.url&&safeUrl(x.url)).forEach(x=>{const a=document.createElement("a");a.href=safeUrl(x.url);a.appendChild(makeIcon(String(x.label).toLowerCase()==="linkedin"?"linkedin":String(x.label).toLowerCase()==="instagram"?"instagram":"globe"));a.appendChild(document.createTextNode(x.label));a.target="_blank";a.rel="noopener noreferrer";socials.appendChild(a)});if(socials.children.length)info.appendChild(socials);article.append(visual,info);speakers.appendChild(article)});if(!speakers.children.length)speakers.appendChild(makeText("p","","Speaker details will be announced soon."));
+ const identity=makeText("div","speaker-identity","");identity.appendChild(makeText("strong","speaker-name",s.name||"Speaker name"));identity.appendChild(makeText("p","speaker-description",s.description||""));visual.appendChild(identity);const info=makeText("div","speaker-info speaker-content","");if(s.topic){const topic=makeText("div","speaker-topic","");topic.appendChild(makeText("b","","Talk Topic"));topic.appendChild(document.createTextNode(s.topic));info.appendChild(topic)}if(s.bio){const bio=makeText("p","speaker-bio",s.bio);info.appendChild(bio)}const socials=makeText("div","speaker-socials","");(s.socials||[]).filter(x=>x.url&&safeUrl(x.url)).forEach(x=>{const a=document.createElement("a");a.href=safeUrl(x.url);a.appendChild(makeIcon(String(x.label).toLowerCase()==="linkedin"?"linkedin":String(x.label).toLowerCase()==="instagram"?"instagram":"globe"));a.appendChild(document.createTextNode(x.label));a.target="_blank";a.rel="noopener noreferrer";socials.appendChild(a)});if(socials.children.length)info.appendChild(socials);article.append(visual,info);speakers.appendChild(article)});if(!speakers.children.length)speakers.appendChild(makeText("p","","Speaker details will be announced soon."));
  const audience=$("detailAudience");audience.replaceChildren();(event.audience||[]).forEach(a=>audience.appendChild(makeText("span","",a)));$("audienceSection").style.display=status!=="completed"&&audience.children.length?"block":"none";
  const facts=$("detailFacts");facts.replaceChildren();const participantValue=status==="completed"?(event.participantsCount!==undefined&&String(event.participantsCount).trim()!==""?String(event.participantsCount):"Not recorded"):(event.participants||"To be announced");const participantLabel=status==="completed"?"Number of Participants":"Participants";facts.append(addFact("calendar","Date",event.date),addFact("clock","Time",event.time),addFact("pin","Venue",event.venue),addFact("users",participantLabel,participantValue));if(status!=="completed")facts.appendChild(addFact("tag","Fee",event.fee));
  const register=$("registerButton"),regUrl=safeUrl(event.registrationUrl||""),statusNow=getEventStatus(event);
