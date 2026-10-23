@@ -94,10 +94,11 @@
 .detail-layout.completed-layout .right-content{display:flex;flex-direction:column;gap:15px;align-items:stretch;min-width:0}
 .detail-layout.completed-layout .right-content .card{margin-bottom:0}
 .detail-layout.completed-layout #speakersSection{margin-bottom:0}
-  /* Hide speakers section for upcoming events */
-/*.detail-layout:not(.completed-layout) #speakersSection {
-  display: none !important;*/
+  /* Hide speakers section for upcoming events if required:
+.detail-layout:not(.completed-layout) #speakersSection {
+  display: none !important;
 }
+*/
 .detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:125px minmax(0,1fr);gap:16px;padding:16px}
 .detail-layout.completed-layout #speakersSection .speaker-photo-wrap{max-width:125px;height:145px}
 .detail-layout.completed-layout #contactCard{display:none!important}
@@ -125,7 +126,7 @@
 
 <div class="listing-view" id="listingView">
   <section class="hero"><div class="hero-inner"><span class="hero-label">TBARC India · Events</span><h1>Events & Experiences</h1><p>Discover workshops, seminars, webinars, nature camps and other programmes bringing people together for biodiversity, research and conservation.</p></div></section>
-  <main class="events-section"><div class="container"><div class="section-heading"></p><h2>Explore Our Events</h2><p>Select a programme to explore its details, speakers, schedule and registration information.</p></div><div class="event-filters" id="eventFilters" role="group" aria-label="Filter events">
+  <main class="events-section"><div class="container"><div class="section-heading"><h2>Explore Our Events</h2><p>Select a programme to explore its details, speakers, schedule and registration information.</p></div><div class="event-filters" id="eventFilters" role="group" aria-label="Filter events">
   <button type="button" class="event-filter" data-filter="all" aria-pressed="true">All Events</button>
   <button type="button" class="event-filter" data-filter="upcoming" aria-pressed="false">Upcoming</button>
   <button type="button" class="event-filter" data-filter="completed" aria-pressed="false">Completed</button>
@@ -143,6 +144,7 @@
     <section class="section" id="audienceSection"><h2>Who Can Participate?</h2><div class="audience" id="detailAudience"></div></section>
   </div><aside class="right-content" id="rightContent">
     <div class="card register-card" id="registrationCard"><h3 id="registrationHeading">Register for the Event</h3><a class="register-button" id="registerButton" href="#" target="_blank" rel="noopener noreferrer">Register Now <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><p class="register-note" id="registerNote"></p></div>
+    <div class="card" id="resourcesCard" hidden><h3>Programme Resources</h3><div class="event-resources"><a class="resource-link" id="reportButton" href="#" target="_blank" rel="noopener noreferrer" hidden>Read Programme Report</a><a class="resource-link" id="galleryButton" href="#" target="_blank" rel="noopener noreferrer" hidden>View Photo Gallery</a></div></div>
     <div class="card" id="contactCard"><h3>Contact</h3><div id="detailContact"></div></div>
   </aside></div></main>
 </div>
@@ -180,7 +182,7 @@ const events = [
       { icon: "book-open", title: "Learning Resources", description: "Get learning materials and practical guidance." }
     ],
      speakers: [
-      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Write a shortWrite a short biography aWrite a short biography about the speakerbout the speakerWrite a short biography about the speaker biography about the speaker, including their research interests, expertise and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
+      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Add a short biography about the speaker, including research interests, expertise, and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
       { role: "Lead Speaker", name: "Unaisudheen TP", description: "Invasive Plant Researcher", topic: "Recognising Invasive Plants and Citizen Participation in Biodiversity Monitoring", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/unais.bot/" }] }
  
   ],
@@ -213,7 +215,7 @@ const events = [
       { icon: "book-open", title: "Learning Resources", description: "Get learning materials and practical guidance." }
     ],
      speakers: [
-      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Write a shortWrite a short biography aWrite a short biography about the speakerbout the speakerWrite a short biography about the speaker biography about the speaker, including their research interests, expertise and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
+      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Add a short biography about the speaker, including research interests, expertise, and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
       { role: "Lead Speaker", name: "Unaisudheen TP", description: "Invasive Plant Researcher", topic: "Recognising Invasive Plants and Citizen Participation in Biodiversity Monitoring", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/unais.bot/" }] }
  
   ],
@@ -287,9 +289,9 @@ const events = [
       { icon: "sprout", title: "Action & Learning", description: "Add the expected learning outcomes." }
     ],
     speakers: [
-      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Write a shortWrite a short biography aWrite a short biography about the speakerbout the speakerWrite a short biography about the speaker biography about the speaker, including their research interests, expertise and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
-      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Write a shortWrite a short biography aWrite a short biography about the speakerbout the speakerWrite a short biography about the speaker biography about the speaker, including their research interests, expertise and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
-    ], audience: ["M.Sc. Students", "Early Career Researchers", ""],
+      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Add a short biography about the speaker, including research interests, expertise, and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
+      { role: "Keynote Speaker", name: "Dr. Harshid P", description: "Conservation Biology",bio: "Add a short biography about the speaker, including research interests, expertise, and relevant experience.", topic: "ecological niche modelling", image: "images/unais.jpg", socials: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/unaisudheentp/" }, { label: "Instagram", url: "https://www.instagram.com/_harshiid_/" }] },
+    ], audience: ["M.Sc. Students", "Early Career Researchers"],
     registrationUrl: "", registrationNote: "Registration information will be announced.",
     contact: { email: "tbarcindia@gmail.com", phone: "+91 94468 33667", website: "https://tbarc.in" }
   }
