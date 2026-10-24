@@ -95,22 +95,35 @@
 .report-photo img{display:block;width:100%;height:150px;object-fit:cover}
 .report-photo figcaption{padding:9px 10px;font-size:11px;color:var(--muted);line-height:1.45}
 #detailStatus[hidden],.report-gallery[hidden]{display:none!important}
-.detail-layout.completed-layout{grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:26px}
+.detail-layout.completed-layout{grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:26px}
 .detail-layout.completed-layout .left-content{width:100%;max-width:100%;min-width:0}
 .detail-layout.completed-layout #eventDetailsCard{margin-bottom:28px}
 .detail-layout.completed-layout .right-content{display:flex;flex-direction:column;gap:15px;align-items:stretch;min-width:0}
 .detail-layout.completed-layout .right-content .card{margin-bottom:0}
 .detail-layout.completed-layout #speakersSection{margin-bottom:0}
+.detail-layout.completed-layout #completedAboutSection{display:none!important}
+.detail-layout.completed-layout #reportSection{margin:0 0 15px;min-width:0}
+.detail-layout.completed-layout #reportSection .report-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   /* Hide speakers section for upcoming events if required:
 .detail-layout:not(.completed-layout) #speakersSection {
   display: none !important;
 }
 */
-.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:125px minmax(0,1fr);gap:16px;padding:16px}
-.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{max-width:125px;height:145px}
+/* Completed-event speaker cards: image on the left; identity, topic and socials stacked on the right. */
+.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:125px minmax(0,1fr);grid-template-rows:auto auto auto auto;column-gap:16px;row-gap:10px;padding:16px;align-items:start}
+.detail-layout.completed-layout #speakersSection .speaker-visual,
+.detail-layout.completed-layout #speakersSection .speaker-info{display:contents}
+.detail-layout.completed-layout #speakersSection .speaker-role{grid-column:1/-1;grid-row:1;justify-self:start;margin:0 0 2px}
+.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{grid-column:1;grid-row:2 / span 3;max-width:125px;height:145px}
+.detail-layout.completed-layout #speakersSection .speaker-identity{grid-column:2;grid-row:2;margin:0;text-align:left;align-self:start}
+.detail-layout.completed-layout #speakersSection .speaker-identity .speaker-name{text-align:left}
+.detail-layout.completed-layout #speakersSection .speaker-identity .speaker-description{text-align:left;margin-bottom:0}
+.detail-layout.completed-layout #speakersSection .speaker-topic{grid-column:2;grid-row:3;margin:0}
+.detail-layout.completed-layout #speakersSection .speaker-bio{grid-column:2;grid-row:4;margin:0}
+.detail-layout.completed-layout #speakersSection .speaker-socials{grid-column:2;grid-row:5;justify-content:flex-start;margin-top:0}
 .detail-layout.completed-layout #contactCard{display:none!important}
-@media(max-width:900px){.detail-layout.completed-layout{grid-template-columns:minmax(0,1fr) minmax(250px,.85fr);gap:18px}.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:1fr;gap:14px}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{max-width:160px;height:175px}.detail-layout.completed-layout #speakersSection .speaker-info{text-align:center}.detail-layout.completed-layout #speakersSection .speaker-socials{justify-content:center}}
-@media(max-width:760px){.report-gallery{grid-template-columns:1fr}.report-photo img{height:210px}.detail-layout.completed-layout{grid-template-columns:1fr}.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:1fr;gap:17px}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{height:220px;max-width:210px}}
+@media(max-width:900px){.detail-layout.completed-layout{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:18px}.detail-layout.completed-layout #speakersSection .speaker{grid-template-columns:110px minmax(0,1fr);column-gap:12px;row-gap:9px;padding:14px}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{max-width:110px;height:130px}}
+@media(max-width:760px){.report-gallery{grid-template-columns:1fr}.report-photo img{height:210px}.detail-layout.completed-layout{grid-template-columns:1fr}.detail-layout.completed-layout #speakersSection .speaker{display:flex;flex-direction:column;gap:17px}.detail-layout.completed-layout #speakersSection .speaker-visual{display:flex;flex-direction:column;align-items:center;text-align:center}.detail-layout.completed-layout #speakersSection .speaker-info{display:block;width:100%;text-align:left}.detail-layout.completed-layout #speakersSection .speaker-role{align-self:center}.detail-layout.completed-layout #speakersSection .speaker-photo-wrap{height:220px;max-width:210px}.detail-layout.completed-layout #speakersSection .speaker-identity{text-align:center}.detail-layout.completed-layout #speakersSection .speaker-identity .speaker-name,.detail-layout.completed-layout #speakersSection .speaker-identity .speaker-description{text-align:center}.detail-layout.completed-layout #speakersSection .speaker-topic{margin-bottom:12px}.detail-layout.completed-layout #speakersSection .speaker-socials{justify-content:center;margin-top:14px}}
 @media(max-width:760px){.event-filters{gap:7px;margin-bottom:22px}.event-filter{padding:9px 13px;font-size:12px}.event-status{top:8px;right:8px;padding:5px 7px;font-size:9px}}
 
 
@@ -145,6 +158,7 @@
   <header class="detail-hero" id="detailHero"><div class="detail-hero-inner"><button type="button" class="back-button" id="backButton"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> All Events</button><span class="detail-status" id="detailStatus"></span><div class="detail-hero-heading-row"><div class="detail-hero-copy"><span class="detail-category" id="detailCategory"></span><h1 id="detailTitle"></h1><p id="detailSummary"></p></div><div class="detail-collaboration-logos" id="detailCollaborationLogos" aria-label="Collaborating organisations" hidden></div></div></div></header>
   <main class="detail-container"><div class="detail-layout" id="detailLayout"><div class="left-content">
     <div class="card" id="eventDetailsCard"><h3>Event Details</h3><div id="detailFacts"></div></div>
+    <section class="section" id="completedAboutSection" hidden><h2>About the Event</h2><p id="completedAbout"></p></section>
     <section class="section" id="reportSection"><h2 id="detailAboutHeading">About the Event</h2><p id="detailAbout"></p><div class="report-gallery" id="reportGallery" hidden></div></section>
     <section class="section" id="highlightsSection"><h2>Event Highlights</h2><div class="highlights" id="detailHighlights"></div></section>
     <section class="section" id="speakersSection"><h2>Speakers</h2><div class="speakers" id="detailSpeakers"></div></section>
@@ -443,9 +457,10 @@ function renderEventCollaborationLogos(logos){
   });
   container.hidden = false;
 }
-function openEvent(id){const event=events.find(e=>e.id===id);if(!event)return;history.replaceState(null,"", "#"+encodeURIComponent(event.id));const status=getEventStatus(event);const layout=$("detailLayout"),leftContent=document.querySelector(".left-content"),rightContent=$("rightContent"),detailsCard=$("eventDetailsCard"),speakersSection=$("speakersSection"),audienceSection=$("audienceSection"),contactCard=$("contactCard");layout.classList.toggle("completed-layout",status==="completed");$("detailStatus").hidden=true;if(status==="completed"){leftContent.insertBefore(detailsCard,$("reportSection"));rightContent.insertBefore(speakersSection,contactCard);contactCard.style.display="none";}else{leftContent.insertBefore(speakersSection,audienceSection);rightContent.insertBefore(detailsCard,$("registrationCard"));contactCard.style.display="block";}$("detailCategory").textContent=event.category;$("detailTitle").textContent=event.title;$("detailSummary").textContent=event.summary||"";renderEventCollaborationLogos(event.collaborationLogos);$("detailHero").style.backgroundImage=`linear-gradient(90deg,rgba(0,25,10,.88),rgba(0,30,10,.28)),url("${event.image}")`;
- $("detailAboutHeading").textContent=status==="completed"?"Programme Report":"About the Event";
- $("detailAbout").textContent=status==="completed"?(event.report||event.about||"The programme report will be added soon."):(event.about||"Details will be announced soon.");
+function openEvent(id){const event=events.find(e=>e.id===id);if(!event)return;history.replaceState(null,"", "#"+encodeURIComponent(event.id));const status=getEventStatus(event),isCompleted=status==="completed";const layout=$("detailLayout"),leftContent=document.querySelector(".left-content"),rightContent=$("rightContent"),detailsCard=$("eventDetailsCard"),reportSection=$("reportSection"),completedAboutSection=$("completedAboutSection"),speakersSection=$("speakersSection"),audienceSection=$("audienceSection"),contactCard=$("contactCard");layout.classList.toggle("completed-layout",isCompleted);$("detailStatus").hidden=true;if(isCompleted){leftContent.insertBefore(detailsCard,completedAboutSection);leftContent.insertBefore(completedAboutSection,speakersSection);leftContent.insertBefore(speakersSection,audienceSection);rightContent.insertBefore(reportSection,rightContent.firstChild);completedAboutSection.hidden=true;contactCard.style.display="none";}else{leftContent.insertBefore(detailsCard,reportSection);leftContent.insertBefore(reportSection,$("highlightsSection"));leftContent.insertBefore(speakersSection,audienceSection);completedAboutSection.hidden=true;rightContent.insertBefore(detailsCard,$("registrationCard"));contactCard.style.display="block";}$("detailCategory").textContent=event.category;$("detailTitle").textContent=event.title;$("detailSummary").textContent=event.summary||"";renderEventCollaborationLogos(event.collaborationLogos);$("detailHero").style.backgroundImage=`linear-gradient(90deg,rgba(0,25,10,.88),rgba(0,30,10,.28)),url("${event.image}")`;
+ $("detailAboutHeading").textContent=isCompleted?"Programme Report":"About the Event";
+ $("detailAbout").textContent=isCompleted?(event.report||"The programme report will be added soon."):(event.about||"Details will be announced soon.");
+ $("completedAbout").textContent=event.about||event.summary||"Event details will be added soon.";
  const gallery=$("reportGallery");gallery.replaceChildren();if(status==="completed"&&Array.isArray(event.reportImages)&&event.reportImages.length){event.reportImages.slice(0,3).forEach((photo,index)=>{const figure=makeText("figure","report-photo","");const img=document.createElement("img");img.src=photo.src;img.alt=photo.alt||("Programme photo "+(index+1));img.loading="lazy";img.onerror=function(){this.onerror=null;this.src="https://placehold.co/900x600/e4efe3/075333?text=Programme+Photo"};figure.appendChild(img);figure.appendChild(makeText("figcaption","",photo.caption||("Programme photo "+(index+1))));gallery.appendChild(figure)});gallery.hidden=false}else{gallery.hidden=true}
  $("highlightsSection").style.display=status==="completed"?"none":"block";
  const hi=$("detailHighlights");hi.replaceChildren();(event.highlights||[]).forEach(h=>{const item=makeText("div","highlight","");const iconBox=makeText("div","highlight-icon","");iconBox.appendChild(makeIcon(h.icon||"leaf"));item.appendChild(iconBox);item.appendChild(makeText("strong","",h.title));item.appendChild(makeText("p","",h.description));hi.appendChild(item)});
